@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Calculator </title>
+
+<link rel="stylesheet" href="./css/cal.css">
+</head>
+<body>
+    <section class="bod">
+          <input type="text" placeholder="0" id="display" disabled>
+        <div id="butt">
+      <button onclick="clr()" class="item clr">CLR</button>
+      <button onclick="del()" class="item del">DEL</button>
+       <button onclick="display('%')" class="item spe">%</button>
+       <button onclick="display('/')" class="item spe">/</button>
+
+      <button onclick="display('7')" class="item">7</button>
+      <button onclick="display('8')" class="item">8</button>
+      <button onclick="display('9')" class="item">9</button>
+      <button onclick="display('*')" class="item spe">*</button>
+
+      <button onclick="display('4')" class="item">4</button>
+      <button onclick="display('5')" class="item">5</button>
+      <button onclick="display('6')" class="item">6</button>
+      <button onclick="display('-')" class="item spe">-</button>
+
+      <button onclick="display('1')" class="item">1</button>
+      <button onclick="display('2')" class="item">2</button>
+      <button onclick="display('3')" class="item">3</button>
+      <button onclick="display('+')" class="item spe">+</button>
+
+      <button onclick="display('.')" class="item">.</button>
+      <button onclick="display('0')" class="item">0</button>
+     <button onclick="calculate()" class="item ual">=</button>
+
+        </div>
+
+
+       <script src="./js/cal.js"></script>
+    </section>
+</body>
+</html>
