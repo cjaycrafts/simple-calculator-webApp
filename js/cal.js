@@ -1,34 +1,31 @@
- 
-            
-            let flag=0;
-            
-            let output=document.getElementById("display");
-            function display(num){
-                if (flag===1){
-                    output.value ="";
-                    flag=0;
-                } else {
-                    output.value+= num;
-                }
-            }
-             function calculate(){
-                try{
-                    output.value =eval(output.value);
-                    flag=1;
-                }
-                catch(err)
-                {
-                    output.value="";
-                    alert("ERROR")
-                    flag=1;
-                }
-            }
-                function del(){
-                    output.value = output.value.slice(0,-1) ;
-                }
+let shouldClearDisplay = false;
+let output = document.getElementById("display");
 
-                function clr(){
-                    output.value= "";
-                }
+function display(num) {
+    if (shouldClearDisplay) {
+        output.value = "";
+        shouldClearDisplay = false;
+    }
+    output.value += num;
+}
 
-             
+function calculate() {
+    try {
+        output.value = eval(output.value);
+        shouldClearDisplay = true;
+    } catch(err) {
+        output.value = "";
+        alert("ERROR");
+        shouldClearDisplay = true;
+    }
+}
+
+function del() {
+    output.value = output.value.slice(0, -1);
+    shouldClearDisplay = false;
+}
+
+function clr() {
+    output.value = "";
+    shouldClearDisplay = false;
+}
